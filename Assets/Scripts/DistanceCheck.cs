@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -11,8 +12,9 @@ public class DistanceCheck : MonoBehaviour
     void Update()
     {
         Vector3 distance = target.position - marble.position;
+        double dis = Math.Round(distance.magnitude);
         if (distance.magnitude > 0.8) {
-            timetext.text = "Distance: "+ distance.magnitude.ToString();
+            timetext.text = "Distance: "+ Math.Round(distance.magnitude, 1).ToString() + " meter";
         } else {
             timetext.text = "You win!";
         }

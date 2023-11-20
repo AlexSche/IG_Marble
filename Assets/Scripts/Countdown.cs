@@ -16,7 +16,6 @@ public class Countdown : MonoBehaviour
     IEnumerator BeginCountdown() {
         if (timer > 1) {
             timer -= 1;
-            Debug.Log(timer);
             timetext.text = timer.ToString();
             yield return new WaitForSeconds(1);
             this.StartCoroutine("BeginCountdown");
