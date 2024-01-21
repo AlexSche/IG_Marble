@@ -348,7 +348,6 @@ GameObject:
   - component: {fileID: 750332704}
   - component: {fileID: 750332706}
   - component: {fileID: 750332705}
-  - component: {fileID: 750332707}
   m_Layer: 5
   m_Name: Timer
   m_TagString: Untagged
@@ -472,21 +471,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 750332703}
   m_CullTransparentMesh: 1
---- !u!114 &750332707
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 750332703}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7a467012c596aa42a6873aa978c5684, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeText: {fileID: 750332705}
-  notificationText: {fileID: 261272885}
-  healthSystem: {fileID: 1207380511}
 --- !u!1 &888646037
 GameObject:
   m_ObjectHideFlags: 0
@@ -737,6 +721,7 @@ GameObject:
   - component: {fileID: 1207380505}
   - component: {fileID: 1207380504}
   - component: {fileID: 1207380508}
+  - component: {fileID: 1207380512}
   - component: {fileID: 1207380509}
   - component: {fileID: 1207380510}
   - component: {fileID: 1207380511}
@@ -888,7 +873,7 @@ MonoBehaviour:
   target: {fileID: 510116008}
   marble: {fileID: 1207380507}
   distanceText: {fileID: 1330107819}
-  countdown: {fileID: 750332707}
+  countdown: {fileID: 1207380512}
 --- !u!114 &1207380511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -905,6 +890,21 @@ MonoBehaviour:
   - {fileID: 1519797320}
   - {fileID: 385879556}
   - {fileID: 935819843}
+--- !u!114 &1207380512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207380503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7a467012c596aa42a6873aa978c5684, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeText: {fileID: 750332705}
+  notificationText: {fileID: 261272885}
+  healthSystem: {fileID: 1207380511}
 --- !u!1 &1251159703
 GameObject:
   m_ObjectHideFlags: 0
