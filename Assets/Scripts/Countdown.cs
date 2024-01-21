@@ -1,29 +1,36 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Countdown : MonoBehaviour
 {
     private int timer = 60;
-    private TextMeshProUGUI timetext; 
-    private HealthSystem healthSystem;
+    public TextMeshProUGUI timeText; 
+    public TextMeshProUGUI notificationText;
+    public HealthSystem healthSystem;
 
     void Start(){
-        timetext = GetComponent<TextMeshProUGUI>();
-        this.StartCoroutine("BeginCountdown");
+        this.StartCoroutine("Timer");
     }
 
-    IEnumerator BeginCountdown() {
-        if (timer > 1) {
+    public void stopTimer() {
+        this.StopCoroutine("Timer");
+    }
+
+    public void restart() {
+        timer = 60;
+    }
+
+    IEnumerator Timer() {
+        if (timer > 0) {
             timer -= 1;
-            timetext.text = timer.ToString();
+            timeText.text = timer.ToString();
             yield return new WaitForSeconds(1);
-            this.StartCoroutine("BeginCountdown");
+            this.StartCoroutine("Timer");
         } else {
-            timetext.text = "Time is up!";
+            notificationText.text = "Time is up!";
             healthSystem.LoseHealth();
-            this.StopAllCoroutines();
+            this.StopAllCoroutines(); 
         }
     }
 }
